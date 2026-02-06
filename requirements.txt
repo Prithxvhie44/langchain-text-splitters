@@ -15,6 +15,7 @@ google-generativeai
 
 langchain-groq
 
+pypdf
 # Hugging Face Integration
 langchain-huggingface
 transformers

@@ -1,10 +1,6 @@
-from langchain_text_splitters import CharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-
-
-
-
-text ="""Gotcha 👍 You just need some **dummy text with enough length + variation** to test a **length-based text splitter in LangChain**. Here you go — this is intentionally a bit long and uneven so chunking is obvious.
+text="""Gotcha 👍 You just need some **dummy text with enough length + variation** to test a **length-based text splitter in LangChain**. Here you go — this is intentionally a bit long and uneven so chunking is obvious.
 
 ---
 
@@ -31,14 +27,13 @@ If you want:
 * **Highly repetitive text**
 * **Technical / story / random words style**
 
-Just tell me the format and I’ll generate it 🔧✨
-"""
+Just tell me the format and I’ll generate it 🔧✨"""
 
-splitter=CharacterTextSplitter(
-    chunk_size=100,
+splitter=RecursiveCharacterTextSplitter(
+    chunk_size=300,
     chunk_overlap=0,
-        separator=''
 )
 
-result=splitter.split_text(text)
-print(result)
+chunks=splitter.split_text(text)
+print(chunks)
+
